@@ -1,0 +1,26 @@
+:root {
+    --fade-in-position: 40px;
+    --neg-fade-in-position: -40px;
+}
+
+.fade-in-hide {
+    opacity: 0;
+    transition: ease-in-out 1s;
+}
+
+.hidden-top {
+    transform: translate(0, var(--neg-fade-in-position));
+}
+
+.hidden-left {
+    transform: translate(var(--neg-fade-in-position), 0);
+}
+
+.hidden-right {
+    transform: translate(var(--fade-in-position), 0);
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translate(0,0);
+}
