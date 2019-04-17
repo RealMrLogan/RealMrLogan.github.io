@@ -1,3 +1,21 @@
+/* 
+This CSS file is for most of the styles on the page except for a few things that I put into
+different sheets in order to compatmentalize.
+
+STYLES IN DIFFERENT SHEETS
+-fade.css
+    Styles that focuse on transitioning text and elements based the location of the page
+
+TABLE OF CONTENTS
+1. Reset/default
+2. Header
+3. Content Containers
+    3.1. Content-sections
+    3.2. Content-dividers
+4. Projects
+*/
+
+/*** 1. RESET AND DEFAULT VALUES ***/
 html, body {
     margin: 0;
     padding: 0;
@@ -5,30 +23,37 @@ html, body {
 
 :root {
     --header-background-color: #333;
+    --divider-offset: 25px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*** 2. HEADER ***/
 header {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: auto;
     align-items: center;
-    padding-bottom: 20px;
+    padding: 20px 0;
     background-color: var(--header-background-color);
     color: whitesmoke;
 }
 
-header > h1:first-child {
+header>h1:first-child, header>h1:last-child {
     font-size: 1.5em;
     font-weight: 100;
 }
-header >div {
+
+header>div {
     display: flex;
     flex-direction: row;
     font-size: 1.25em;
 }
 
-header >div h1 {
+header h1 {
     margin: 0;
 }
 
@@ -36,6 +61,63 @@ header>div h1:last-child {
     margin-left: 10px;
 }
 
-header h1 {
-    font-family: 'Montserrat', sans-serif;
+/*** 3. CONTENT CONTAINERS ***/
+/* 3.1 CONTENT SECTIONS */
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    top: calc(var(--divider-offset)*-1);
+}
+
+/* 3.2 CONTENT DIVIDERS */
+.content-divider {
+    background: #41ade5;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.content-divider:before, .content-divider:after {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(-1.5deg);
+    transform-origin: 100%;
+    z-index: -1;
+}
+
+.content-divider:before {
+    bottom: var(--divider-offset);
+}
+
+.content-divider:after {
+    bottom: 0;
+}
+
+/*** PROJECTS ***/
+.vertical-ribbon {
+    height: 500px;
+    background-color: lightgreen;
+    margin: 0;
+    transition: 1.5s;
+    border: 1px solid black;
+}
+
+.content-description {
+    height: 40%;
+    background: linear-gradient(#00000000, #000);
+    position: absolute;
+    bottom: 0;
+    width: inherit;
+}
+
+.make-invisible {
+    opacity: 0;
 }
