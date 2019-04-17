@@ -1,8 +1,6 @@
 (function () {
     setTimeout(() => {
         const header = document.getElementsByTagName("header")[0];
-        console.dir(header);
-
         header.children[0].classList.add("fade-in-visible");
         const name = header.children[1];
         for (let i = 0; i < name.children.length; i++) {
@@ -31,7 +29,7 @@ document.getElementById("projects").addEventListener('mouseout', e => {
     console.log("left the projects");
     const projects = document.getElementById("projects").children;
     for (let i = 0; i < projects.length; i++) { // hide all the descriptions
-        for (let j = 0; j < projects[i].children.length; j++) {
+        for (let j = 1; j < projects[i].children.length; j++) { // skip the video
             if (!projects[i].children[j].classList.contains("make-invisible")) {
                 projects[i].children[j].classList.add("make-invisible");
             }
@@ -62,7 +60,7 @@ function setWidthOfProjects(element) {
         for (let i = 0; i < projects.length; i++) {
             if (projects[i] != element) {
                 // hide the children if they aren't hidden already
-                for (let j = 0; j < projects[i].children.length; j++) {
+                for (let j = 1; j < projects[i].children.length; j++) { // skip the video
                     if (!projects[i].children[j].classList.contains("make-invisible")) {
                         projects[i].children[j].classList.add("make-invisible");
                     }
