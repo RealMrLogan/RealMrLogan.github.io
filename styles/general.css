@@ -1,10 +1,12 @@
-/* 
+/***
 This CSS file is for most of the styles on the page except for a few things that I put into
 different sheets in order to compatmentalize.
 
 STYLES IN DIFFERENT SHEETS
 -fade.css
     Styles that focuse on transitioning text and elements based the location of the page
+-syntax-highlights.css
+    These styles are for highlighting syntax in my code examples
 
 TABLE OF CONTENTS
 1. Reset/default
@@ -14,7 +16,8 @@ TABLE OF CONTENTS
     3.2. Content-dividers
 4. Introduction
 5. Projects
-*/
+6. Languages
+***/
 
 /*** 1. RESET AND DEFAULT VALUES ***/
 html, body {
@@ -24,7 +27,7 @@ html, body {
 
 :root {
     --header-background-color: #333;
-    --divider-offset: 25px;
+    --divider-offset: 50px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,7 +44,7 @@ header {
     padding: 20px 0;
     background-color: var(--header-background-color);
     color: whitesmoke;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 header>h1:first-child, header>h1:last-child {
@@ -80,6 +83,7 @@ header>div h1:last-child {
     position: relative;
     text-align: center;
     z-index: 1;
+    margin-top: -25px;
 }
 
 .content-divider:before, .content-divider:after {
@@ -102,8 +106,11 @@ header>div h1:last-child {
 .content-divider:after {
     bottom: 0;
 }
+.content-divider h2 {
+    height: var(--divider-offset);
+}
 
-/*** INTRODUCTION ***/
+/*** 4. INTRODUCTION ***/
 #introduction > div {
     display: flex;
     flex-direction: column;
@@ -146,4 +153,14 @@ header>div h1:last-child {
 
 .make-invisible {
     opacity: 0;
+}
+
+/*** 6. LANGUAGES ***/
+.languages {
+    margin-top: 75px;
+}
+
+.languages p {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
