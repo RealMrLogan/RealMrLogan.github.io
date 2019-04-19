@@ -158,9 +158,9 @@ header>div h1:last-child {
 /*** 6. LANGUAGES ***/
 .languages {
     margin-top: 75px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .languages p {
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
 }
