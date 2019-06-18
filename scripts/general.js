@@ -50,7 +50,7 @@ function setWidthOfProjects(element) {
             projects[i].children[0].pause(); // pause the video if they aren't already
         }
     } else { // compensate for the hovered element
-        const hoveredWidth = 75;
+        const hoveredWidth = 80; // % of container
         element.style.width = hoveredWidth + "%";
         // autoplay the video
         element.children[0].play();

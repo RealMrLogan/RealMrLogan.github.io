@@ -8,6 +8,7 @@ STYLES IN DIFFERENT SHEETS
 
 TABLE OF CONTENTS
 1. Reset/default
+    1.1 Scrollbar
 2. Header
 3. Content Containers
     3.1. Content-sections
@@ -18,18 +19,50 @@ TABLE OF CONTENTS
 ***/
 
 /*** 1. RESET AND DEFAULT VALUES ***/
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
+}
+
+main {
+    overflow-x: hidden;
 }
 
 :root {
     --header-background-color: #333;
     --divider-offset: 50px;
+    --divider-color: #41ade5;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
+}
+
+/* 1.1 Scrollbar */
+::-webkit-scrollbar {
+    /* width */
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    /* Track */
+    background-color: var(--divider-color);
+}
+
+::-webkit-scrollbar-thumb {
+    /* Handle */
+    background: var(--header-background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* Handle on hover */
+    background: grey;
 }
 
 /*** 2. HEADER ***/
@@ -42,10 +75,10 @@ header {
     padding: 20px 0;
     background-color: var(--header-background-color);
     color: whitesmoke;
-    /* margin-bottom: 50px; */
 }
 
-header>h1:first-child, header>h1:last-child {
+header>h1:first-child,
+header>h1:last-child {
     font-size: 1.5em;
     font-weight: 100;
 }
@@ -71,50 +104,24 @@ header>div h1:last-child {
     justify-content: space-between;
     width: 100%;
     position: relative;
-    /* top: calc(var(--divider-offset)*-1); */
 }
 
 /* 3.2 CONTENT DIVIDERS */
 .content-divider {
-    background: #41ade5;
+    background-color: var(--divider-color);
     color: #fff;
     position: relative;
     text-align: center;
     z-index: 1;
     padding: 20px 0;
-    /* margin-top: -25px; */
 }
 
 .content-divider h2 {
     margin: 0;
 }
 
-/* .content-divider:before, .content-divider:after {
-    background: inherit;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    transform: skewY(-1.5deg);
-    transform-origin: 100%;
-    z-index: -1;
-} */
-
-/* .content-divider:before {
-    bottom: var(--divider-offset);
-}
-
-.content-divider:after {
-    bottom: 0;
-}
-.content-divider h2 {
-    height: var(--divider-offset);
-} */
-
 /*** 4. INTRODUCTION ***/
-#introduction > div {
+#introduction>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -123,7 +130,7 @@ header>div h1:last-child {
 
 /*** 5. PROJECTS ***/
 #projects {
-    background-color: #41ade5;
+    background-color: var(--divider-color);
 }
 
 .vertical-ribbon {
@@ -135,6 +142,8 @@ header>div h1:last-child {
 }
 
 .vertical-ribbon video {
+    display: block;
+    margin: auto;
     height: 100%;
 }
 
@@ -154,16 +163,18 @@ header>div h1:last-child {
     text-align: center;
 }
 
+.content-description p {
+    margin: 20px;
+}
+
 .make-invisible {
     opacity: 0;
 }
 
 /*** 6. LANGUAGES ***/
 .languages {
-    /* margin-top: 75px; */
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    flex-wrap: wrap;
     width: 60%;
     margin: auto;
 }
@@ -172,16 +183,16 @@ header>div h1:last-child {
     margin: 0;
 }
 
-.tile-1, .tile-2 {
+.content-column {
     width: 50%;
 }
 
-.tile-1 {
-    height: 250px;
+.tile-sm {
+    height: 300px;
     background-color: lightblue;
 }
 
-.tile-2 {
-    height: 500px;
+.tile-lg {
+    height: 600px;
     background-color: aquamarine;
 }
