@@ -48,6 +48,11 @@ h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
+.invisible {
+    /* Male every applicable element hidden by default so that they can appear later */
+    opacity: 0;
+}
+
 /* 1.1 Scrollbar */
 ::-webkit-scrollbar {
     /* width */
