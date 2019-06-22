@@ -23,6 +23,10 @@ TABLE OF CONTENTS
 ***/
 
 /*** 1. RESET AND DEFAULT VALUES ***/
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
@@ -35,6 +39,7 @@ main {
 
 :root {
     --dark-grey: #333;
+    --dark-grey-transparent-50: #33333377;
     --divider-offset: 50px;
     --blue: #41ade5;
 }
@@ -51,6 +56,10 @@ h6 {
 .invisible {
     /* Male every applicable element hidden by default so that they can appear later */
     opacity: 0;
+}
+
+.blue-background {
+    background-color: var(--blue);
 }
 
 /* 1.1 Scrollbar */
@@ -207,46 +216,84 @@ header>div h1:last-child {
 }
 
 /*** 8. WORK EXPERIENCE ***/
-.work-experience {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 70%;
-    margin: auto;
+/* https://www.w3schools.com/howto/howto_css_timeline.asp */
+.background-image {
+    /* The image used */
+    background-image: url("photographer.jpg");
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../photos/mountains.jpg");
 }
 
-.work-section {
-    width: 45%;
-}
-
-.work-section:nth-child(odd) {
-    margin-left: auto;
-    padding-left: 3.5%;
-    border-left: 2px solid var(--blue);
-}
-
-.work-section:nth-child(even) {
-    margin-right: auto;
-    text-align: right;
-    padding-right: 6.4%;
-    border-right: 2px solid var(--blue);
-}
-
-.work-dot {
-    --diameter: 20px;
-
-    display: block;
-    width: var(--diameter);
-    height: var(--diameter);
-    border-radius: calc(var(--diameter) / 2);
-    background-color: var(--blue);
+/* The actual timeline (the vertical ruler) */
+.timeline {
     position: relative;
-    bottom: -45px;
-    right: 9.5%;
+    max-width: 70%;
+    margin: 0 auto;
 }
 
-.work-section:nth-child(even) .work-dot {
-    right: -112.5%;
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--dark-grey);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: var(--blue);
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Right */
+.timeline-container:nth-child(odd) {
+    left: 50%;
+}
+.timeline-container:nth-child(odd):after {
+    left: -16px;
+}
+
+/* Left */
+.timeline-container:nth-child(even) {
+    left: 0;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
 }
 
 /*** FOOTER ***/
