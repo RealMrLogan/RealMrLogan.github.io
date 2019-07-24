@@ -14,13 +14,18 @@
 <body>
     <main>
         <header>
-            <h1 class="fade-in-hide hidden-left">Logan</h1>
+            <h1 class="hidden-left" id="header-name">Logan</h1>
+            <nav>
+                <a class="hidden-left" href="#education">Education</a>
+                <a class="hidden-left" href="#projects-anchor">Projects</a>
+                <a class="hidden-left" href="#technologies">Technologies</a>
+                <a class="hidden-left" href="#skills">Skills</a>
+                <a class="hidden-left" href="#work-exp">Work Experience</a>
+            </nav>
+            <a href="resume.pdf" target="_blank" class="resume hidden-right">Download<br>Resume</a>
         </header>
 
-        <section class="content-section centered dark-grey-background">
-            <a href="resume.pdf" target="_blank" class="resume">Click to download my Resume</a>
-        </section>
-        <div class="content-divider">
+        <div class="content-divider" id="education">
             <h2>Education</h2>
         </div>
         <section class="content-section centered">
@@ -33,7 +38,7 @@
                 </ul>
             </div>
         </section>
-        <div class="content-divider">
+        <div class="content-divider" id="projects-anchor">
             <h2>Projects</h2>
         </div>
         <section class="content-section" id="projects">
@@ -84,48 +89,44 @@
                 </div>
             </div>
         </section>
-        <div class="content-divider">
+        <div class="content-divider" id="technologies">
             <h2>Technologies</h2>
         </div>
-        <section class="content-section languages">
-            <section class="content-column">
-                <div class="tile-sm invisible">
-                    <h3>HTML 5</h3>
-                    <img src="" alt="">
-                </div>
-                <div class="tile-sm invisible">
-                    <h3>CSS 3</h3>
-                    <img src="" alt="">
-                </div>
-                <div class="tile-lg invisible">
-                    <h3>JavaScript 6</h3>
-                    <img src="" alt="">
-                </div>
-            </section>
-            <section class="content-column">
-                <div class="tile-sm invisible">
-                    <h3>C++</h3>
-                    <img src="" alt="">
-                </div>
-                <div class="tile-sm invisible">
-                    <h3>C#</h3>
-                    <img src="" alt="">
-                </div>
-                <div class="tile-sm invisible">
-                    <h3>VBA</h3>
-                    <img src="" alt="">
-                </div>
-                <div class="tile-lg invisible">
-                    <h3>PHP</h3>
-                    <img src="" alt="">
-                </div>
-                <div class="tile-sm invisible">
-                    <h3>PSQL</h3>
-                    <img src="" alt="">
-                </div>
-            </section>
+        <section class="content-section technologies">
+            <div class="tile hidden-top technology">
+                <img src="" alt="">
+                <h3>HTML</h3>
+            </div>
+            <div class="tile hidden-top technology">
+                <img src="" alt="">
+                <h3>CSS</h3>
+            </div>
+            <div class="tile hidden-top technology">
+                <img src="" alt="">
+                <h3>JavaScript</h3>
+            </div>
+            <div class="tile hidden-top technology">
+                <img src="" alt="">
+                <h3>C++</h3>
+            </div>
+            <div class="tile hidden-top technology">
+                <img src="" alt="">
+                <h3>C#</h3>
+            </div>
+            <div class="tile hidden-top technology">
+                <img src="" alt="">
+                <h3>VBA</h3>
+            </div>
+            <div class="tile hidden-top technology">
+                <img src="" alt="">
+                <h3>PHP</h3>
+            </div>
+            <div class="tile hidden-top technology">
+                <img src="" alt="">
+                <h3>PSQL</h3>
+            </div>
         </section>
-        <div class="content-divider">
+        <div class="content-divider" id="skills">
             <h2>Skills</h2>
         </div>
         <section class="content-section">
@@ -149,7 +150,7 @@
                 <p class="skill-description">Back-End</p>
             </div>
         </section>
-        <div class="content-divider">
+        <div class="content-divider" id="work-exp">
             <h2>Work Experience</h2>
         </div>
         <section class="content-section blue-background">

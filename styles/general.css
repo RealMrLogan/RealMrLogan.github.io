@@ -7,20 +7,25 @@ STYLES IN DIFFERENT SHEETS
     Styles that focuse on transitioning text and elements based the location of the page
 
 TABLE OF CONTENTS
+0. Font imports
 1. Reset/default
-    1.1 Scrollbar
+    1.1. Scrollbar
 2. Header
+    2.1. Nav Bar
 3. Content Containers
     3.1. Content-sections
     3.2. Content-dividers
 4. Introduction
 5. Projects
-6. Languages
+6. Technologies
 7. Skills
 8. Work Experience
 9. Education
 10. Footer
 ***/
+
+/*** 0. FONT IMPORTS ***/
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 
 /*** 1. RESET AND DEFAULT VALUES ***/
 * {
@@ -39,24 +44,20 @@ main {
 
 :root {
     --dark-grey: #333;
+    --blue: #00476b;
+    --pink: rgb(184, 0, 101);
     --dark-grey-transparent-50: #33333377;
     --divider-offset: 50px;
-    --blue: #00476b;
     --header-text: 'Montserrat', sans-serif;
+    --body-text: 'Merriweather', serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--header-text);
 }
 
-.invisible {
-    /* Make every applicable element hidden by default so that they can appear later */
-    opacity: 0;
+li, a {
+    font-family: var(--body-text);
 }
 
 .blue-background {
@@ -65,15 +66,6 @@ h6 {
 
 .dark-grey-background {
     background-color: var(--dark-grey);
-}
-
-.content-section.centered {
-    justify-content: center;
-}
-
-.resume {
-    color: white;
-    font-size: 1.5em;
 }
 
 /* 1.1 Scrollbar */
@@ -103,10 +95,13 @@ header {
     flex-direction: column;
     width: 100%;
     margin: auto;
-    /* align-items: center; */
     padding: 20px 0;
     background-color: var(--dark-grey);
     color: whitesmoke;
+}
+
+header h1, .resume {
+    transition: 1s;
 }
 
 header h1 {
@@ -114,6 +109,42 @@ header h1 {
     font-weight: 100;
     margin: 0 0 0 75px;
     font-weight: bold;
+}
+
+.resume {
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    right: 75px;
+    top: 50px;
+    text-align: center;
+    background-color: var(--blue);
+    padding: 15px;
+}
+
+.resume:hover {
+    padding-left: 50px;
+    background-color: var(--pink);
+    transition: 150ms;
+}
+
+/* 2.1 NAV BAR */
+nav {
+    display: flex;
+    flex-direction: column;
+}
+nav  a {
+    margin: 5px 0 5px 75px;
+    padding: 15px;
+    background-color: var(--blue);
+    width: 200px;
+    color: white;
+    text-decoration: none;
+    transition: 150ms linear;
+}
+nav a:hover {
+    width: 250px;
+    background-color: var(--pink);
 }
 
 /*** 3. CONTENT CONTAINERS ***/
@@ -190,34 +221,33 @@ header h1 {
     opacity: 0;
 }
 
-/*** 6. LANGUAGES ***/
-.languages {
+/*** 6. TECHNOLOGIES ***/
+.technologies {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    width: 60%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
     margin: auto;
 }
 
-.languages p {
+.technologies p {
     margin: 0;
 }
 
-.languages h3 {
+.technologies h3 {
     margin: 0;
 }
 
-.content-column {
-    width: 50%;
+.technology {
+    transition: 3s;
 }
 
-.tile-sm {
-    height: 300px;
+.tile {
+    height: 175px;
+    width: 175px;
+    margin: 20px 0;
     background-color: lightblue;
-}
-
-.tile-lg {
-    height: 600px;
-    background-color: aquamarine;
 }
 
 /*** 7. SKILLS ***/
@@ -249,6 +279,13 @@ header h1 {
     bottom:10%;
     font-size: 1.5em;
 }
+
+/* If you wanted to animate the circles
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+} */
 
 /*** 8. WORK EXPERIENCE ***/
 /* Timeline reference: https://www.w3schools.com/howto/howto_css_timeline.asp */

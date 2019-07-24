@@ -1,28 +1,42 @@
 (function () {
-    setTimeout(() => {
+    setTimeout(() => { // have the name some in 200 ms after page load
         const header = document.getElementsByTagName("header")[0];
         header.children[0].classList.add("fade-in-visible");
-        const name = header.children[1];
-        for (let i = 0; i < name.children.length; i++) {
-            name.children[i].classList.add("fade-in-visible");
-        }
+        header.children[header.children.length - 1].classList.add("fade-in-visible");
     }, 200);
+    const nav = document.getElementsByTagName("nav")[0];
+    let time = 500;
+    const diff = 200;
+    for (let i = 0; i < nav.children.length; i++) {
+        setTimeout(() => {
+            nav.children[i].classList.add("fade-in-visible");
+            nav.children[i].classList.remove("fade-in-hide");
+        }, time);
+        time += diff;
+    }
     setWidthOfProjects(null);
 })();
 
-window.onscroll = (e) => { // whenever you scroll, check if you need to fade in an element
+// whenever you scroll, check if you need to fade in an element
+window.onscroll = (e) => {
     console.log("Scrolling");
-    
-    const elements = document.getElementsByClassName("invisible");
+
+    const elements = document.getElementsByClassName("technology");
     for (let i = 0; i < elements.length; i++) {
         if (document.documentElement.scrollTop - 300 >= elements[i].offsetTop) //Adjust Tolerance as you want
         {
-            fadeIn(elements[i], 3000);
+            elements[i].classList.add("fade-in-visible");
         }
     }
 }
 
-function fadeIn(element, speed = 500) {
-    element.style.transition = speed + "ms";
-    element.style.opacity = 1;
-}
+// smoth scrolling when you click on an anchor
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
