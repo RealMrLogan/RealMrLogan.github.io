@@ -41,7 +41,8 @@ main {
     --dark-grey: #333;
     --dark-grey-transparent-50: #33333377;
     --divider-offset: 50px;
-    --blue: #41ade5;
+    --blue: #00476b;
+    --header-text: 'Montserrat', sans-serif;
 }
 
 h1,
@@ -50,11 +51,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--header-text);
 }
 
 .invisible {
-    /* Male every applicable element hidden by default so that they can appear later */
+    /* Make every applicable element hidden by default so that they can appear later */
     opacity: 0;
 }
 
@@ -102,37 +103,24 @@ header {
     flex-direction: column;
     width: 100%;
     margin: auto;
-    align-items: center;
+    /* align-items: center; */
     padding: 20px 0;
     background-color: var(--dark-grey);
     color: whitesmoke;
 }
 
-header>h1:first-child,
-header>h1:last-child {
-    font-size: 1.5em;
-    font-weight: 100;
-}
-
-header>div {
-    display: flex;
-    flex-direction: row;
-    font-size: 1.25em;
-}
-
 header h1 {
-    margin: 0;
-}
-
-header>div h1:last-child {
-    margin-left: 10px;
+    font-size: 4em;
+    font-weight: 100;
+    margin: 0 0 0 75px;
+    font-weight: bold;
 }
 
 /*** 3. CONTENT CONTAINERS ***/
 /* 3.1 CONTENT SECTIONS */
 .content-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     position: relative;
 }
@@ -232,19 +220,46 @@ header>div h1:last-child {
     background-color: aquamarine;
 }
 
+/*** 7. SKILLS ***/
+.circle {
+    width: 160px;
+    height: 160px;
+}
+.circle-foreground {
+    stroke: var(--blue);
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+}
+/* The container for the circles, percent, and description */
+.skill-container {
+    margin: 20px 0 -40px 0;
+}
+
+.skill-percentage {
+    position: relative;
+    bottom: 35%;
+    left: 35%;
+    font-size: 2em;
+    margin: 0;
+}
+.skill-description {
+    text-align: center;
+    position: relative;
+    bottom:10%;
+    font-size: 1.5em;
+}
+
 /*** 8. WORK EXPERIENCE ***/
 /* Timeline reference: https://www.w3schools.com/howto/howto_css_timeline.asp */
 .background-image {
     /* The image used */
     background-image: url("photographer.jpg");
-
     /* Add the blur effect */
     filter: blur(8px);
     -webkit-filter: blur(8px);
-
     /* Full height */
     height: 100%;
-
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -286,7 +301,7 @@ header>div h1:last-child {
     width: 25px;
     height: 25px;
     right: -17px;
-    background-color: var(--blue);
+    background-color: white;
     border: 4px solid var(--dark-grey);
     top: 15px;
     border-radius: 50%;
