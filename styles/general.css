@@ -231,12 +231,19 @@ nav a:hover {
     margin: auto;
 }
 
-.technologies p {
+/* .technologies p {
     margin: 0;
-}
+} */
 
 .technologies h3 {
     margin: 0;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.technologies img {
+    width: 80%;
+    height: 80%;
 }
 
 .technology {
@@ -244,10 +251,12 @@ nav a:hover {
 }
 
 .tile {
-    height: 175px;
-    width: 175px;
+    height: 150px;
+    width: 150px;
     margin: 20px 0;
-    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*** 7. SKILLS ***/

@@ -23,14 +23,14 @@ window.onscroll = (e) => {
 
     const elements = document.getElementsByClassName("technology");
     for (let i = 0; i < elements.length; i++) {
-        if (document.documentElement.scrollTop - 300 >= elements[i].offsetTop) //Adjust Tolerance as you want
+        if (document.documentElement.scrollTop - 700 >= elements[i].offsetTop) //Adjust Tolerance as you want
         {
             elements[i].classList.add("fade-in-visible");
         }
     }
 }
 
-// smoth scrolling when you click on an anchor
+// smooth scrolling when you click on an anchor
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
