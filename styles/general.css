@@ -231,14 +231,11 @@ nav a:hover {
     margin: auto;
 }
 
-/* .technologies p {
-    margin: 0;
-} */
-
 .technologies h3 {
     margin: 0;
     margin-top: 15px;
     text-align: center;
+    white-space: nowrap;
 }
 
 .technologies img {
@@ -251,9 +248,9 @@ nav a:hover {
 }
 
 .tile {
-    height: 150px;
-    width: 150px;
-    margin: 20px 0;
+    height: 100px;
+    width: 100px;
+    margin: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -273,12 +270,14 @@ nav a:hover {
 /* The container for the circles, percent, and description */
 .skill-container {
     margin: 20px 0 -40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skill-percentage {
     position: relative;
     bottom: 35%;
-    left: 35%;
     font-size: 2em;
     margin: 0;
 }
@@ -287,6 +286,7 @@ nav a:hover {
     position: relative;
     bottom:10%;
     font-size: 1.5em;
+    margin-top: 0;
 }
 
 /* If you wanted to animate the circles
