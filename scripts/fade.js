@@ -18,15 +18,11 @@
 })();
 
 // whenever you scroll, check if you need to fade in an element
-window.onscroll = (e) => {
-    console.log("Scrolling");
-
+window.onscroll = e => {
     const elements = document.getElementsByClassName("technology");
     for (let i = 0; i < elements.length; i++) {
-        if (document.documentElement.scrollTop - 700 >= elements[i].offsetTop) //Adjust Tolerance as you want
-        {
-            elements[i].classList.add("fade-in-visible");
-        }
+        const tolerance = 700; // Adjust Tolerance as you want
+        if (document.documentElement.scrollTop - tolerance >= elements[i].offsetTop) elements[i].classList.add("fade-in-visible");
     }
 }
 

@@ -1,16 +1,11 @@
 document.getElementById("projects").addEventListener('mouseover', e => {
     const projects = document.getElementById("projects");
-    if (e.target == projects) {
-        return;
-    } else if (!e.target.classList.contains("vertical-ribbon")) {
+    if (e.target == projects) return
+    else if (!e.target.classList.contains("vertical-ribbon")) {
         let target = e.target;
-        while (!target.classList.contains("vertical-ribbon")) {
-            target = target.parentElement;
-        }
+        while (!target.classList.contains("vertical-ribbon")) target = target.parentElement;
         setWidthOfProjects(target);
-    } else {
-        setWidthOfProjects(e.target);
-    }
+    } else setWidthOfProjects(e.target);
 });
 
 document.getElementById("projects").addEventListener('mouseout', e => {
@@ -28,9 +23,7 @@ document.getElementById("projects").addEventListener('mouseout', e => {
 function setWidthOfProjects(element) {
     const projects = document.getElementById("projects").children;
     // remove any previously set widths
-    for (let i = 0; i < projects.length; i++) {
-        projects[i].style.removeProperty("width");
-    }
+    for (let i = 0; i < projects.length; i++) projects[i].style.removeProperty("width");
     if (element == null) { // set each project to equal lengths
         const width = 100 / projects.length;
         for (let i = 0; i < projects.length; i++) {
@@ -41,7 +34,7 @@ function setWidthOfProjects(element) {
         const hoveredWidth = 80; // % of container
         element.style.width = hoveredWidth + "%";
         // autoplay the video
-        if (element.children[0]) element.children[0].play();
+        if (element.children[0].localName == "video") element.children[0].play();
         // show the children of the element
         for (let i = 1; i < element.children.length; i++) {
             element.children[i].classList.remove("make-invisible");
