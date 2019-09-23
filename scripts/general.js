@@ -41,7 +41,7 @@ function setWidthOfProjects(element) {
         const hoveredWidth = 80; // % of container
         element.style.width = hoveredWidth + "%";
         // autoplay the video
-        element.children[0].play();
+        if (element.children[0]) element.children[0].play();
         // show the children of the element
         for (let i = 1; i < element.children.length; i++) {
             element.children[i].classList.remove("make-invisible");
